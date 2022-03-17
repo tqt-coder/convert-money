@@ -39,7 +39,7 @@ namespace ChangeMoney
         [WebMethod]
         public double EURToVND(double money)
         {
-            return money * USD_RATE;
+            return money * EUR_RATE;
 
         }
        

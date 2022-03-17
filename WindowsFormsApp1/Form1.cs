@@ -12,18 +12,55 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        private ServiceReference1.WebService1SoapClient ws;
         public Form1()
         {
             InitializeComponent();
-            ws = new ServiceReference1.WebService1SoapClient();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+      
+
+        private void btnVND2USD_Click(object sender, EventArgs e)
         {
-            
-                this.txt1.Text = ws.USDToVND(10).ToString();
-            
+            using(ServiceReference1.WebService1SoapClient client = new ServiceReference1.WebService1SoapClient())
+            {
+
+                double t = Convert.ToDouble(this.txtMoney.Text.ToString());
+                double temp = client.VNDToUSD(t);
+                this.txtKetQua.Text = Math.Round(temp, 3).ToString();
+            }
+        }
+
+        private void btnVND2EUR_Click(object sender, EventArgs e)
+        {
+            using (ServiceReference1.WebService1SoapClient client = new ServiceReference1.WebService1SoapClient())
+            {
+
+                double t = Convert.ToDouble(this.txtMoney.Text.ToString());
+                double temp = client.VNDToEUR(t);
+                this.txtKetQua.Text = Math.Round(temp, 3).ToString();
+            }
+        }
+
+        private void btnUSD2VND_Click(object sender, EventArgs e)
+        {
+            using (ServiceReference1.WebService1SoapClient client = new ServiceReference1.WebService1SoapClient())
+            {
+
+                double t = Convert.ToDouble(this.txtMoney.Text.ToString());
+                double temp = client.USDToVND(t);
+                this.txtKetQua.Text = Math.Round(temp, 3).ToString();
+            }
+        }
+
+        private void btnEUR2VND_Click(object sender, EventArgs e)
+        {
+            using (ServiceReference1.WebService1SoapClient client = new ServiceReference1.WebService1SoapClient())
+            {
+
+                double t = Convert.ToDouble(this.txtMoney.Text.ToString());
+                double temp = client.EURToVND(t);
+                this.txtKetQua.Text = Math.Round(temp, 3).ToString();
+            }
         }
     }
 }
