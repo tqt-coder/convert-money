@@ -16,11 +16,33 @@ namespace ChangeMoney
     // [System.Web.Script.Services.ScriptService]
     public class WebService1 : System.Web.Services.WebService
     {
+        private const double USD_RATE = 22880.50;
+        private const double EUR_RATE = 25254.92;
+
 
         [WebMethod]
-        public string HelloWorld()
+        public double VNDToUSD(double money)
         {
-            return "Hello World";
+            return money / USD_RATE;
         }
+
+        [WebMethod]
+        public double VNDToEUR(double money)
+        {
+            return money / EUR_RATE;
+        }
+        [WebMethod]
+        public double USDToVND(double money)
+        {
+            return money*USD_RATE;
+        }
+        [WebMethod]
+        public double EURToVND(double money)
+        {
+            return money * USD_RATE;
+
+        }
+       
+      
     }
 }
