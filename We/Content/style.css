@@ -1,0 +1,151 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main {
+}
+
+#header {
+    margin-left: auto;
+    height: 46.5px;
+    background-color: black;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 1;
+}
+
+#nav {
+    display: inline-block;
+    text-align: center;
+    margin-left: 30%;
+}
+
+#nav, .subnav {
+    list-style-type: none;
+}
+
+    #nav li {
+        display: inline-block;
+        position: relative;
+    }
+
+        #nav li:hover .subnav {
+            display: block;
+        }
+
+    #nav > li > a {
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    #nav li a {
+        text-decoration: none;
+        line-height: 46.5px;
+        padding: 0 24px;
+        display: inline-block;
+    }
+
+    #nav .subnav li:hover a,
+    #nav > li:hover > a {
+        color: #000;
+        background-color: #ccc;
+    }
+
+    #nav .subnav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        min-width: 160px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #nav .nav-arrow-down {
+        font-size: 14px;
+    }
+
+    #nav .subnav li {
+        width: 100%;
+    }
+
+    #nav .subnav a {
+        padding-left: 12px;
+        line-height: 38px;
+        color: black;
+        width: 100%;
+    }
+
+
+#content {
+    margin-top: 50px;
+    text-align: center;
+}
+
+form {
+    background: #ccc;
+    margin: 0 auto;
+    width: 500px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+    form * {
+        box-sizing: border-box;
+    }
+
+    form table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        form table tr, form table td {
+            border: 1px solid #928759;
+        }
+
+            form table tr:first-child input {
+                height: 50px;
+                padding: 0 10px;
+                font-weight: 700;
+            }
+
+            form table tr:not(:first-child) td {
+                height: 70px;
+            }
+
+                form table tr:not(:first-child) td input {
+                    height: 100%;
+                }
+
+        form table input {
+            width: 100%;
+            display: block;
+            border: 0;
+            font-size: 16px;
+        }
+
+            form table input:focus {
+                outline: none;
+            }
+
+            form table input:hover {
+                background: #ffcc00;
+                transition: all .2s ease-in-out;
+            }
+
+            form table input.operator {
+                font-weight: 700;
+                color: #fff;
+                background: #ffcc00;
+            }
+
+#footer {
+}

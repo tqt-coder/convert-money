@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+
+    <div id="main">
+        <div id="header">
+            <!-- Begin nav -->
+            <ul id="nav">
+                <li><a href="">Application name</a></li>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+            <!-- End nav -->
+        </div>
+
+        <div id="content">
+            <form id="form-calculator" method="POST" action="/ChangeMoney/Create">
+                @Html.AntiForgeryToken()
+                <table>
+                    <tr>
+                        <td>
+                            Tiền quy đổi
+                        </td>
+                        <td colspan="3">
+                            <input type="text" name="inputMoney" value="@ViewBag.Number" id="input">
+
+
+                        </td>
+                        <input type="text" id="inputType" name="typeMoney" hidden>
+
+                        
+                    </tr>
+                    <tr>
+                        <td colspan>
+                            Kết quả
+                        </td>
+                        <td colspan="3">
+                            @if (ViewBag.Result != null)
+                            {
+                                <input type="text" name="result" value="@ViewBag.Result" readonly>
+
+                            }
+
+                            @if (ViewBag.Result == null)
+                            {
+                                <input type="text" name="result" readonly>
+
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit"  value="VND2USD" ></td>
+                        <td><input type="submit"  value="VND2EUR" ></td>
+                        <td><input type="submit"  value="USD2VND" ></td>
+                        <td><input type="submit"  value="EUR2VND" ></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+       
+<script>
+    const arrCalc = document.querySelectorAll('input[type="submit"]');
+    const inputType = document.getElementById('inputType');
+    const formCalc = document.getElementById('form-calculator');
+    [...arrCalc].forEach((btnCalc) => {
+    
+        btnCalc.onclick = function(e){
+            e.preventDefault();
+            inputType.value = this.value;
+            formCalc.submit();
+        }
+    })
+</script>
+    </div>
