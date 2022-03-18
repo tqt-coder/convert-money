@@ -130,7 +130,7 @@
             this.Controls.Add(this.btnVND2EUR);
             this.Controls.Add(this.btnVND2USD);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "App đổi tiền tệ";
             this.ResumeLayout(false);
             this.PerformLayout();
 
