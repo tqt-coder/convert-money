@@ -51,7 +51,7 @@ namespace WindowsFormsApp1
                 this.txtKetQua.Text = Math.Round(temp, 3).ToString();
             }
         }
-
+       
         private void btnEUR2VND_Click(object sender, EventArgs e)
         {
             using (ServiceReference1.WebService1SoapClient client = new ServiceReference1.WebService1SoapClient())
