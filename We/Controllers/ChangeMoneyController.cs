@@ -65,6 +65,7 @@ namespace We.Controllers
                 }
                 catch
                 {
+                    TempData["error"] = "The WebService not found !!!";
                     return RedirectToAction("Index", "Home");
                 }
             }

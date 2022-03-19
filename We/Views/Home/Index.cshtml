@@ -16,6 +16,7 @@
         </div>
 
         <div id="content">
+            <h2 style="color:red; font-style:italic"> @ViewBag.Error</h2>
             <form id="form-calculator" method="POST" action="/ChangeMoney/Create">
                 @Html.AntiForgeryToken()
                 <table>

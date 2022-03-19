@@ -15,6 +15,10 @@ namespace We.Controllers
                 ViewBag.Result = TempData["result"].ToString();
                 ViewBag.Number = TempData["number"].ToString();
             }
+            if(TempData["error"] != null)
+            {
+                ViewBag.Error = TempData["error"].ToString();
+            }
             return View();
         }
 
